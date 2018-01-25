@@ -85,7 +85,7 @@ class WebsocketClient(object):
         while not self.stop:
             try:
                 start_t = 0
-                if time.time() - start_t >= 30
+                if time.time() - start_t >= 30:
                     self.ws.ping("keepalive")
                     start_t = time.time()
                 data = self.ws.recv()
