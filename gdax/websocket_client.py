@@ -84,8 +84,8 @@ class WebsocketClient(object):
     def _listen(self):
         while not self.stop:
             try:
-                if int(time.time() % 30) == 0:
-                    # Set a 30 second ping to keep connection alive
+                if int(time.time() % 10) == 0:
+                    # Set a 10 second ping to keep connection alive
                     self.ws.ping("keepalive")
                 data = self.ws.recv()
                 msg = json.loads(data)
