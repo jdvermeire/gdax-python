@@ -92,7 +92,7 @@ class AuthenticatedClient(PublicClient):
         url = self.url + '/orders/'
         params = {}
         if product_id:
-            params["product_id"] product_id
+            params["product_id"] = product_id
         r = requests.delete(url, auth=self.auth, params=params, timeout=self.timeout)
         # r.raise_for_status()
         return r.json()
